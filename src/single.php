@@ -22,8 +22,8 @@
                 </section><!-- /.content -->
 
                 <nav class="postNavi">
-                    <span class="prev"><a href="">バレンタイン企画を行います</a></span>
-                    <span class="next"><a href="">ゴールデンウィークのご案内</a></span>
+                    <span class="prev"><?php previous_post_link('%link'); ?></span>
+                    <span class="next"><?php next_post_link('%link'); ?></span>
                 </nav>
             </article><!-- /.entry -->
             <?php
