@@ -46,6 +46,13 @@ gulp.task('php', function () {
     .pipe(browserSync.reload({stream: true}));
 });
 
+gulp.task('image', function () {
+  gulp.src(config.src + '/images/**/*')
+    .pipe($.changed(config.dest + '/images'))
+    .pipe(gulp.dest(config.dest + '/images'))
+    .pipe(browserSync.reload({stream: true}));
+});
+
 gulp.task('default', ['browserSync'], function () {
   gulp.watch(config.src + '/*.php', ['php']);
   gulp.watch(config.src + '/styles/**/*.scss', ['sass']);
