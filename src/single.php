@@ -34,21 +34,8 @@
 
         <aside class="subContents">
             <div class="wrapper">
-                <section class="recentCategories">
-                    <h1 class="type-C">カテゴリー一覧</h1>
-                    <ul class="categories">
-                        <li><a href="category.html">お知らせ</a>(10)</li>
-                        <li><a href="category.html">コラム</a>(5)</li>
-                    </ul>
-                </section><!-- /.recentCategories -->
-
-                <section class="recentArchives">
-                    <h1 class="type-C">月別アーカイブ</h1>
-                    <ul class="archives">
-                        <li><a href="date.html">2015年2月</a>(2)</li>
-                        <li><a href="date.html">2015年1月</a>(1)</li>
-                    </ul><!-- /.archives -->
-                </section><!-- /.recentArchives -->
+                <?php get_sidebar('categories'); ?>
+                <?php get_sidebar('archives'); ?>
             </div><!-- /.wrapper -->
         </aside><!-- /.subContents -->
     </div><!-- /.contentsWrap -->
