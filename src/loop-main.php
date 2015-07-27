@@ -24,5 +24,11 @@ if ( have_posts() ) :
 </article><!-- /.news -->
 <?php
   endwhile;
-endif;
+else :
 ?>
+  <?php if ( is_search() ) : ?>
+    <p>検索結果はありませんでした。</p>
+  <?php else : ?>
+    <p>記事はありません。</p>
+  <?php endif;?>
+<?php endif;?>
