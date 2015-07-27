@@ -2,7 +2,12 @@
 
     <div class="contentsWrap">
         <div class="mainContents">
-          <h1 class="type-A"><?php wp_title(); ?></h1>
+          <?php if ( is_month() ): ?>
+              <h1 class="type-A"><?php the_time('Y年m月')?></h1>
+          <?php else: ?>
+              <h1 class="type-A"><?php wp_title(); ?></h1>
+          <?php endif; ?>
+
             <section class="newsBlock block">
             <?php get_template_part('loop', 'main'); ?>
             </section><!-- /.newsBlock -->
