@@ -34,3 +34,16 @@ function my_comment_form_default_fields($args) {
   $args['url'] = '';
   return $args;
 }
+
+// トップページでは３件だけ記事を表示
+add_action('pre_get_posts', 'my_pre_get_posts');
+function my_pre_get_posts ($query) {
+  if ( is_admin() || !$query->is_main_query() ) {
+    return;
+  }
+
+  if ( $query->is_home() ) {
+    $query->set('posts_per_page', 3);
+    return;
+  }
+}
