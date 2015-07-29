@@ -30,7 +30,7 @@ wp_head();
     <nav class="globalNavi">
     <?php
     wp_nav_menu(array(
-      'menu' => 'global-navigatioon',
+      'menu' => 'global-navigation',
       'container' => 'false'
     ));
     ?>
