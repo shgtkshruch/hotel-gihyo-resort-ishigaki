@@ -1,6 +1,8 @@
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var browserSync = require('browser-sync');
+var ghpages = require('gh-pages');
+var path = require('path');
 
 var config = {
   src: 'src',
@@ -51,6 +53,10 @@ gulp.task('image', function () {
     .pipe($.changed(config.dest + '/images'))
     .pipe(gulp.dest(config.dest + '/images'))
     .pipe(browserSync.reload({stream: true}));
+});
+
+gulp.task('deploy', function () {
+  ghpages.publish(path.join(__dirname, 'static/hotel-gihyo-resort-ishigaki'));
 });
 
 gulp.task('default', ['browserSync'], function () {
